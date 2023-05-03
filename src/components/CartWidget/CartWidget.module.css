@@ -1,0 +1,8 @@
+.containerCart {
+  position: relative;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+  right: 10px;
+  width: 45px;
+}
