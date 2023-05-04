@@ -1,9 +1,10 @@
 import ItemList from "./ItemList";
+import { useState, useEffect } from "react";
 
-const ItemListContainer = ({ saludo, año }) => {
+const ItemListContainer = () => {
   return (
     <div style={{ textAlign: "center" }}>
-      <ItemList saludo={saludo} año={año} />
+      <ItemList />
     </div>
   );
 };
