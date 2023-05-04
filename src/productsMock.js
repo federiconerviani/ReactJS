@@ -37,7 +37,7 @@ export const products = [
     description:
       "Este es un hongo muy usado en la cocina ya que, por sus dimensiones, permite una gran variedad de platos ornamentales. De textura carnosa y sabor inconfundible.",
     category: "Gourmet",
-    img: "https://res.cloudinary.com/dd4cervcm/image/upload/v1683230171/Psilocybe-Cubensis_yizeo6.jpg",
+    img: "https://res.cloudinary.com/dd4cervcm/image/upload/v1683235982/15-seta-de-ostra-pleurotus-ostreatus-lacasadelassetas_gszrq0.jpg",
   },
   {
     id: 5,
