@@ -2,7 +2,7 @@ import estilosNavbar from "./Navbar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
 import Counter from "../Counter/Counter";
 
-const Navbar = ({ saludo, edad }) => {
+const Navbar = () => {
   return (
     <div className={estilosNavbar.containerNavbar}>
       <img

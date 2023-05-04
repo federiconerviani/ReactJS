@@ -1,15 +1,16 @@
 import estiloApp from "./App.module.css";
+import ItemListContainer from "./components/ItemList/ItemListContainer";
 import Navbar from "./components/Navbar/Navbar";
 
-let saludo = "Hola que tal?";
-let edad = 23;
 function App() {
+  let saludo = "¡Bienvenidos al Valhalla!";
+  let año = 2023;
   return (
     <div className={estiloApp.App}>
       <div>
-        <Navbar saludo={saludo} edad={edad} />
+        <Navbar />
+        <ItemListContainer saludo={saludo} año={año} />
       </div>
-      <h1>Hola</h1>
     </div>
   );
 }
