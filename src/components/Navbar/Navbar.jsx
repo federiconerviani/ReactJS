@@ -15,9 +15,10 @@ const Navbar = () => {
           />
         </Link>
         <ul className={estilosNavbar.lista}>
-          <li>Medicinales</li>
-          <li>Terapéuticos</li>
-          <li>Gourmet</li>
+          <Link to="/">Todo</Link>
+          <Link to="/category/medicinal">Medicinales</Link>
+          <Link to="/category/terapeutico">Terapéuticos</Link>
+          <Link to="/category/gourmet">Gourmet</Link>
         </ul>
         <CartWidget />
         <Counter />
