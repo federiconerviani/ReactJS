@@ -7,6 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 
+import { Link } from "react-router-dom";
+
 const ItemList = ({ items }) => {
   return (
     <div
@@ -18,7 +20,7 @@ const ItemList = ({ items }) => {
     >
       {items.map((item) => {
         return (
-          <Card sx={{ maxWidth: 345 }} key={item.id}>
+          <Card sx={{ maxWidth: 345, margin: 1 }} key={item.id}>
             <CardMedia
               component="img"
               alt="green iguana"
@@ -37,7 +39,9 @@ const ItemList = ({ items }) => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Más info</Button>
+              <Link to={`/itemDetail/${item.id}`}>
+                <Button size="small">Más info</Button>
+              </Link>
               <Button size="small">Comprar</Button>
             </CardActions>
           </Card>
