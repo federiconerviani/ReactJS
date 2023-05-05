@@ -1,21 +1,31 @@
+import estilosNavbar from "./Navbar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
-import styles from "./Navbar.module.css";
+import Counter from "../Counter/Counter";
+import { Outlet, Link } from "react-router-dom";
 
-export const Navbar = () => {
-    return (
-        <div className = {styles.containerNavbar}>
-            <img 
-                src="https://res.cloudinary.com/dd4cervcm/image/upload/v1680634494/logo1_nkrsdm.png"
-                alt="Logo de la empresa" 
-            />
-            <ul style={{display: "flex", gap: "30px"}}>
-                <li>Nootrópico y concentración</li>
-                <li>Performance físico</li>
-                <li>Refuerzo inmune</li>
-                <li>Longevidad</li>
-            </ul>
-            <CartWidget />
-        </div>
-
-    );
+const Navbar = () => {
+  return (
+    <div>
+      <div className={estilosNavbar.containerNavbar}>
+        <Link to={"/"}>
+          <img
+            className={estilosNavbar.logo}
+            src="https://res.cloudinary.com/dd4cervcm/image/upload/v1680634494/logo1_nkrsdm.png"
+            alt="Logo página"
+          />
+        </Link>
+        <ul className={estilosNavbar.lista}>
+          <Link to="/">Todo</Link>
+          <Link to="/category/medicinal">Medicinales</Link>
+          <Link to="/category/terapeutico">Terapéuticos</Link>
+          <Link to="/category/gourmet">Gourmet</Link>
+        </ul>
+        <CartWidget />
+        <Counter />
+      </div>
+      <Outlet></Outlet>
+    </div>
+  );
 };
+
+export default Navbar;

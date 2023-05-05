@@ -1,12 +1,12 @@
-import { BsFillCartCheckFill } from "react-icons/bs"
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import estilosCart from "./CartWidget.module.css";
 
 const CartWidget = () => {
-    return (
-        <div>
-            <BsFillCartCheckFill size={35} />
-            <span>0</span>
-        </div>
-    )
-}
+  return (
+    <div className={estilosCart.containerCart}>
+      <AiOutlineShoppingCart size={40} color="blue" />
+    </div>
+  );
+};
 
-export default CartWidget
+export default CartWidget;
