@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route element={<Navbar />}>
           <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:category" element={<ItemListContainer />} />
+          <Route path="/category/:categoryName" element={<ItemListContainer />} />
           <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
           <Route path="*" element={<h1>Error 404</h1>} />
         </Route>
