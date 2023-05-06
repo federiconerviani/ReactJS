@@ -4,24 +4,35 @@
   display: flex;
   justify-content: space-between;
   background-color: rgb(240, 92, 12);
+  position: relative;
 }
 
 .lista {
   display: flex;
-  position: relative;
+  text-decoration: none;
+  background-color: aqua;
+  flex-wrap: wrap;
   margin-top: auto;
   margin-bottom: auto;
-  gap: 50px;
   list-style: none;
   width: 50%;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
+  
+}
+a:link {
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .logo {
   height: 80%;
-  margin-top: auto;
-  margin-bottom: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   margin-left: 10px;
 }
