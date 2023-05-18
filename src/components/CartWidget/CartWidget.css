@@ -1,0 +1,18 @@
+.containerCart {
+  position: absolute;
+  height: 40px;
+  margin-top: 45px;
+  margin-bottom: auto;
+  right: 20px;
+  width: 45px;
+}
+
+.burbuja{
+  width: 20px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 30px;
+  margin-right: 10px;
+}

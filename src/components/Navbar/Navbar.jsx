@@ -1,6 +1,5 @@
 import estilosNavbar from "./Navbar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
-import Counter from "../Counter/Counter";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -21,9 +20,8 @@ const Navbar = () => {
           <Link to="/category/gourmet">Gourmet</Link>
         </ul>
         <CartWidget />
-        <Counter />
       </div>
-      <Outlet></Outlet>
+      <Outlet />
     </div>
   );
 };

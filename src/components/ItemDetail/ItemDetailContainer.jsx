@@ -13,9 +13,13 @@ const ItemDetailContainer = () => {
     setProduct(encontrado);
   }, [id]);
 
+  const onAdd = (cantidad) => {
+    alert(`Se agregaron al carrito ${cantidad} unidad/es de ${product.title}`);
+  };
+
   return (
     <div>
-      <ItemDetail product={product} />
+      <ItemDetail product={product} onAdd={onAdd} />
     </div>
   );
 };
