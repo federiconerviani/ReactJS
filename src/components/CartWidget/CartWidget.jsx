@@ -5,16 +5,17 @@ import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 
 const CartWidget = () => {
-  const { cart } = useContext(CartContext);
+  const { getTotalQuantity } = useContext(CartContext);
 
-  
+  let total = getTotalQuantity();
+
   return (
     <Link to="/cart">
       <div className="containerCart">
         <AiOutlineShoppingCart size={40} color="blue" />
       </div>
       <div className="burbuja">
-        <span>{cart.length}</span>
+        <span>{total}</span>
       </div>
     </Link>
   );
