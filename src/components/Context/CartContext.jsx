@@ -10,7 +10,15 @@ const CartContextProvider = ({ children }) => {
     setCart([...cart, producto]);
   };
 
-  let data = { cart, agregarAlCarrito };
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const deleteProductById = (id) => {
+    console.log("el id a eliminar es: ", id);
+  };
+
+  let data = { cart, agregarAlCarrito, clearCart, deleteProductById };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
