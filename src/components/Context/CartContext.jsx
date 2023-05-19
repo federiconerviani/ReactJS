@@ -15,7 +15,7 @@ const CartContextProvider = ({ children }) => {
   };
 
   const deleteProductById = (id) => {
-    console.log("el id a eliminar es: ", id);
+    console.log(id);
   };
 
   let data = { cart, agregarAlCarrito, clearCart, deleteProductById };
