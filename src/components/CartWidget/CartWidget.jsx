@@ -14,7 +14,7 @@ const CartWidget = () => {
         <AiOutlineShoppingCart size={40} color="blue" />
       </div>
       <div className="burbuja">
-        <span>{cart.lenght}</span>
+        <span>{cart.length}</span>
       </div>
     </Link>
   );
