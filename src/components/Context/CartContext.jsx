@@ -35,7 +35,6 @@ const CartContextProvider = ({ children }) => {
   };
 
   const deleteProductById = (id) => {
-    console.error(id);
     const productosFiltrados = cart.filter((elemento) => elemento.id !== id);
     setCart(productosFiltrados);
   };
