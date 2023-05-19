@@ -40,7 +40,20 @@ const CartContextProvider = ({ children }) => {
     setCart(productosFiltrados);
   };
 
-  let data = { cart, agregarAlCarrito, clearCart, deleteProductById };
+  const getTotalPrice = () => {
+    let total = cart.reduce((acc, elemento) => {
+      return acc + elemento.price * elemento.quantity;
+    }, 0);
+    return total;
+  };
+
+  let data = {
+    cart,
+    agregarAlCarrito,
+    clearCart,
+    deleteProductById,
+    getTotalPrice,
+  };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
