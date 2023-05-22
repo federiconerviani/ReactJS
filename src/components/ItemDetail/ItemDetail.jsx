@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import CounterContainer from "../Counter/CounterContainer";
 
-const ItemDetail = ({ product, onAdd }) => {
+const ItemDetail = ({ product, onAdd, cantidadTotal }) => {
   return (
     <div style={{ display: "flex" }}>
       <div style={{ width: "20%", padding: "20px" }}>
@@ -16,7 +16,11 @@ const ItemDetail = ({ product, onAdd }) => {
         <h2>{product.title}</h2>
         <p>{product.description}</p>
         <p style={{ fontWeight: "bold" }}>${product.price}</p>
-        <CounterContainer stock={product.stock} onAdd={onAdd} initial={undefined}/>
+        <CounterContainer
+          stock={product.stock}
+          onAdd={onAdd}
+          initial={cantidadTotal}
+        />
         <Link to="/">Volver al home</Link>
       </div>
     </div>
