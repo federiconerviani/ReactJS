@@ -16,7 +16,7 @@ const ItemDetail = ({ product, onAdd }) => {
         <h2>{product.title}</h2>
         <p>{product.description}</p>
         <p style={{ fontWeight: "bold" }}>${product.price}</p>
-        <CounterContainer stock={product.stock} onAdd={onAdd}/>
+        <CounterContainer stock={product.stock} onAdd={onAdd} initial={undefined}/>
         <Link to="/">Volver al home</Link>
       </div>
     </div>

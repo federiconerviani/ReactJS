@@ -42,7 +42,6 @@ const ItemList = ({ items }) => {
               <Link to={`/itemDetail/${item.id}`}>
                 <Button size="small">Más info</Button>
               </Link>
-              <Button size="small">Comprar</Button>
             </CardActions>
           </Card>
         );
