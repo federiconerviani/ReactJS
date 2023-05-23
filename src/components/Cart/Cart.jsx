@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart, clearCart, deleteProductById, total }) => {
+const Cart = ({ cart,  deleteProductById, total, clearCartWithAlert }) => {
   return (
     <div style={{margin:"30px"}}>
       <h1>CARRITO</h1>{" "}
@@ -24,7 +24,7 @@ const Cart = ({ cart, clearCart, deleteProductById, total }) => {
       {cart.length > 0 ? (
         <div>
           <h3>El total es ${total}</h3>
-          <Button onClick={clearCart} variant="contained">
+          <Button onClick={clearCartWithAlert} variant="contained">
             Vaciar Carrito
           </Button>
         </div>

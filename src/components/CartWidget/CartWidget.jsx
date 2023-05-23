@@ -10,14 +10,16 @@ const CartWidget = () => {
   let total = getTotalQuantity();
 
   return (
-    <Link to="/cart" style={{ textDecoration: "none" }}>
-      <div className="containerCart">
-        <AiOutlineShoppingCart size={35} color="blue" />
-      </div>
-      <div className="burbuja">
-        <span>{total}</span>
-      </div>
-    </Link>
+    <div className="containerCart">
+      <Link to="/cart" style={{ textDecoration: "none" }}>
+        <div className="carrito">
+          <AiOutlineShoppingCart size={35} color="blue" />
+        </div>
+        <div className="burbuja">
+          <span>{total}</span>
+        </div>
+      </Link>
+    </div>
   );
 };
 export default CartWidget;

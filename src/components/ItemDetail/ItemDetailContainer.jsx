@@ -3,6 +3,7 @@ import { products } from "../../productsMock";
 import { useState, useEffect, useContext } from "react";
 import ItemDetail from "./ItemDetail";
 import { CartContext } from "../Context/CartContext";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -18,16 +19,26 @@ const ItemDetailContainer = () => {
 
   const onAdd = (cantidad) => {
     let data = { ...product, quantity: cantidad };
-    alert(`Se agregaron al carrito ${cantidad} unidad/es de ${product.title}`);
-    
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Producto agregado",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
     agregarAlCarrito(data);
   };
 
-  let cantidadTotal = getQuantityById(product.id)
-    
+  let cantidadTotal = getQuantityById(product.id);
+
   return (
     <div>
-      <ItemDetail product={product} onAdd={onAdd} cantidadTotal={cantidadTotal}/>
+      <ItemDetail
+        product={product}
+        onAdd={onAdd}
+        cantidadTotal={cantidadTotal}
+      />
     </div>
   );
 };
