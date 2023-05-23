@@ -1,8 +1,11 @@
 import estilosNavbar from "./Navbar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { Outlet, Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
 const Navbar = () => {
+  const { cart } = useContext(CartContext);
   return (
     <div>
       <div className={estilosNavbar.containerNavbar}>
@@ -19,7 +22,11 @@ const Navbar = () => {
           <Link to="/category/terapeutico">Terapéuticos</Link>
           <Link to="/category/gourmet">Gourmet</Link>
         </ul>
-        <CartWidget />
+        {cart.length > 0 && (
+          <div>
+            <CartWidget />
+          </div>
+        )}
       </div>
       <Outlet />
     </div>

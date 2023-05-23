@@ -25,7 +25,7 @@ export const products = [
     price: 2000,
     stock: 3,
     description:
-      "Hongo con propiedades psicoactivas. Popularmente usado recreativamente y para tratar la ansiedad y el estres en microdosis.",
+      "Hongo con propiedades psicoactivas. Popularmente usado recreativamente y para tratar la ansiedad y el estrés en micro dosis.",
     category: "terapeutico",
     img: "https://res.cloudinary.com/dd4cervcm/image/upload/v1683230171/Psilocybe-Cubensis_yizeo6.jpg",
   },
