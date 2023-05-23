@@ -18,7 +18,7 @@ const ItemListContainer = () => {
     const tarea = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(categoryName ? productsFiltered : products);
-      }, 2000);
+      }, 1500);
     });
     tarea.then((res) => setItems(res)).catch((err) => console.log(err));
   }, [categoryName]);

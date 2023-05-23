@@ -10,7 +10,7 @@ const CartWidget = () => {
   let total = getTotalQuantity();
 
   return (
-    <Link to="/cart">
+    <Link to="/cart" style={{ textDecoration: "none" }}>
       <div className="containerCart">
         <AiOutlineShoppingCart size={35} color="blue" />
       </div>
