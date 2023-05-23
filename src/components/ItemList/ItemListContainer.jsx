@@ -1,3 +1,4 @@
+import { PropagateLoader } from "react-spinners";
 import { products } from "../../productsMock";
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
@@ -11,17 +12,25 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const productsFiltered = products.filter(
-      prod => prod.category === categoryName
+      (prod) => prod.category === categoryName
     );
 
     const tarea = new Promise((resolve, reject) => {
-      resolve(categoryName ? productsFiltered : products);
+      setTimeout(() => {
+        resolve(categoryName ? productsFiltered : products);
+      }, 2000);
     });
-    tarea.then((res) => setItems(res)).catch((err) => {});
+    tarea.then((res) => setItems(res)).catch((err) => console.log(err));
   }, [categoryName]);
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div>
+      {items.length === 0 && (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <PropagateLoader color="orange" size={40} />
+        </div>
+      )}
+
       <ItemList items={items} />
     </div>
   );

@@ -12,7 +12,7 @@ const CartWidget = () => {
   return (
     <Link to="/cart">
       <div className="containerCart">
-        <AiOutlineShoppingCart size={40} color="blue" />
+        <AiOutlineShoppingCart size={35} color="blue" />
       </div>
       <div className="burbuja">
         <span>{total}</span>
