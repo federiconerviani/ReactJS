@@ -1,8 +1,9 @@
 import { PropagateLoader } from "react-spinners";
-import { products } from "../../productsMock";
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -11,16 +12,27 @@ const ItemListContainer = () => {
   console.log = { categoryName };
 
   useEffect(() => {
-    const productsFiltered = products.filter(
-      (prod) => prod.category === categoryName
-    );
+    let consulta;
 
-    const tarea = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(categoryName ? productsFiltered : products);
-      }, 1500);
-    });
-    tarea.then((res) => setItems(res)).catch((err) => console.log(err));
+    const itemCollection = collection(db, "products");
+    if (categoryName) {
+      const itemsCollectionFiltered = query(
+        itemCollection,
+        where("category", "==", categoryName)
+      );
+      consulta = itemsCollectionFiltered;
+    } else {
+      consulta = itemCollection;
+    }
+
+    getDocs(consulta)
+      .then((res) => {
+        const products = res.docs.map((product) => {
+          return { ...product.data(), id: product.id };
+        });
+        setItems(products);
+      })
+      .catch();
   }, [categoryName]);
 
   return (
