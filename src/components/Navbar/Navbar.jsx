@@ -1,11 +1,26 @@
 import estilosNavbar from "./Navbar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { Outlet, Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../Context/CartContext";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection } from "firebase/firestore";
 
 const Navbar = () => {
   const { cart } = useContext(CartContext);
+
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    const categoriesCollection = collection(db, "categories");
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let categoriesResult = res.docs.map((category) => {
+          return { ...category.data(), id: category.id };
+        });
+        setCategories(categoriesResult);
+      })
+      .catch();
+  }, []);
   return (
     <div>
       <div className={estilosNavbar.containerNavbar}>
@@ -17,10 +32,13 @@ const Navbar = () => {
           />
         </Link>
         <ul className={estilosNavbar.lista}>
-          <Link to="/">Todo</Link>
-          <Link to="/category/medicinal">Medicinales</Link>
-          <Link to="/category/terapeutico">Terapéuticos</Link>
-          <Link to="/category/gourmet">Gourmet</Link>
+          {categories.map((category) => {
+            return (
+              <Link key={category.id} to={category.path}>
+                {category.title}
+              </Link>
+            );
+          })}
         </ul>
         {cart.length > 0 && (
           <div>
