@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import Cart from "./Cart";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CartContainer = () => {
   const { cart, clearCart, deleteProductById, getTotalPrice } =
     useContext(CartContext);
 
   let total = getTotalPrice();
+  const navigate = useNavigate();
 
   const clearCartWithAlert = () => {
     Swal.fire({
@@ -30,6 +32,7 @@ const CartContainer = () => {
   return (
     <div>
       <Cart
+        navigate={navigate}
         cart={cart}
         clearCartWithAlert={clearCartWithAlert}
         deleteProductById={deleteProductById}

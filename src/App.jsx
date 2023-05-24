@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FormCheckoutContainer from "./components/FormCheckout/FormCheckoutContainer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartContainer />} />
             <Route path="/form" element={<Form />} />
+            <Route path="/checkout" element={<FormCheckoutContainer />} />
             <Route path="*" element={<h1>Error 404</h1>} />
           </Route>
         </Routes>
