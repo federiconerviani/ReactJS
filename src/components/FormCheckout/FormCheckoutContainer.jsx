@@ -4,7 +4,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { CartContext } from "../Context/CartContext";
 import { db } from "../../firebaseConfig";
-import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  updateDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
 
 const FormCheckoutContainer = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -18,6 +24,7 @@ const FormCheckoutContainer = () => {
       buyer: data,
       items: cart,
       total: total,
+      date: serverTimestamp(),
     };
     const ordersCollection = collection(db, "orders");
     addDoc(ordersCollection, dataOrder).then((res) => setOrderId(res.id));
